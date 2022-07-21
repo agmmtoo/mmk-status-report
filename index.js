@@ -14,6 +14,7 @@ export const connection = createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
+    socketPath: '/var/run/mysqld/mysqld.sock',
 });
 
 connection.connect(function (err) {
