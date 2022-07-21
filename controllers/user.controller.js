@@ -1,4 +1,13 @@
-import { getAllUsers } from '../db-client.js';
+import { connection } from '../index.js';
+
+async function getAllUsers() {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM users`, (err, results) => {
+            if (err) reject(err);
+            resolve(results);
+        });
+    });
+};
 
 export async function list(req, res) {
     try {
