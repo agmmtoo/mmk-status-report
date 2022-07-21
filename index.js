@@ -8,7 +8,6 @@ config();
 // database setup
 
 import { createConnection } from 'mysql';
-import { config } from 'dotenv';
 
 export const connection = createConnection({
     host: process.env.DB_HOST,
